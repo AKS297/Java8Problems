@@ -1,5 +1,7 @@
 package org.example;
 
+import org.example.sorting.SortStreams;
+
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
@@ -40,5 +42,11 @@ public class Main {
                .collect(Collectors.joining());
 
       System.out.println(s);
+        System.out.println("====================Sorting======================");
+        List<Integer> list1 = List.of(1,3,8,1,3,5,0,9,6);
+
+        SortStreams sortStreams = new SortStreams();
+        sortStreams.sorting(list1);
     }
+
 }
