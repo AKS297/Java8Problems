@@ -1,5 +1,7 @@
 package org.example;
 
+import org.example.arrays.Arrays;
+import org.example.basic.PrimeNumber;
 import org.example.sorting.SortStreams;
 
 import java.util.ArrayList;
@@ -47,6 +49,15 @@ public class Main {
 
         SortStreams sortStreams = new SortStreams();
         sortStreams.sorting(list1);
+
+        Arrays arrays = new Arrays();
+        arrays.divisors(6);
+
+        PrimeNumber primeNumber = new PrimeNumber();
+        primeNumber.checkPrime(3);
+
+        //for List of Numbers
+
     }
 
 }
