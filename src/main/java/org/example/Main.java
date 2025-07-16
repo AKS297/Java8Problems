@@ -2,12 +2,10 @@ package org.example;
 
 import org.example.arrays.Arrays;
 import org.example.basic.PrimeNumber;
+import org.example.comparator.Student;
 import org.example.sorting.SortStreams;
 
-import java.util.ArrayList;
-import java.util.List;
-import java.util.Map;
-import java.util.LinkedHashMap;
+import java.util.*;
 import java.util.function.Function;
 import java.util.stream.Collectors;
 
@@ -57,6 +55,19 @@ public class Main {
         primeNumber.checkPrime(3);
 
         //for List of Numbers
+
+        List<Student> students = new ArrayList<>();
+        Student student = new Student("Akshay",25);
+        Student student1 = new Student("Akshay",26);
+        Student student2 = new Student ("Bob",24);
+
+        students.add(student);
+        students.add(student1);
+        students.add(student2);
+
+        students.stream().sorted(Comparator.comparing(Student::getName).reversed()
+                .thenComparing(Student::getAge).reversed())
+                .forEach(a->System.out.println(a.getAge()));
 
     }
 
