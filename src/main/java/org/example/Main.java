@@ -41,6 +41,22 @@ public class Main {
                .map(String::valueOf)
                .collect(Collectors.joining());
 
+      str.chars().mapToObj(d -> (char) d)
+                      .collect(Collectors.groupingBy(Function.identity(),LinkedHashMap::new,Collectors.counting()))
+                              .entrySet()
+                                      .stream()
+                                              .filter(a -> a.getValue() ==1L)
+                                                      .map(Map.Entry::getKey)
+                                                              .map(String::valueOf)
+                                                                      .collect(Collectors.joining());
+
+      str.chars().mapToObj(a -> (char) a)
+                      .collect(Collectors.groupingBy(Function.identity(),LinkedHashMap::new,Collectors.counting()))
+                              .entrySet().stream().filter(b -> b.getValue() == 1L)
+                      .map(Map.Entry::getKey)
+                              .map(String::valueOf)
+                                      .collect(Collectors.joining());
+
       System.out.println(s);
         System.out.println("====================Sorting======================");
         List<Integer> list1 = List.of(1,3,8,1,3,5,0,9,6);

@@ -1,5 +1,6 @@
 package org.example.basic;
 
+import java.util.Enumeration;
 import java.util.List;
 import java.util.stream.Collectors;
 import java.util.stream.IntStream;
@@ -22,6 +23,9 @@ public class PrimeNumber {
 
         }
         System.out.println("Prime Number");
+      /*  n > 1 && IntStream.rangeClosed(2,(int) Math.sqrt(n))
+                .allMatch(a -> n % a == 0);
+                */
 
         //using streams
         boolean isPrime = n > 1 && IntStream.rangeClosed(2,(int) Math.sqrt(n))
@@ -35,6 +39,11 @@ public class PrimeNumber {
                 .allMatch(a -> number % a != 0))  // all match values
              .distinct()
              .collect(Collectors.toList());
+
+     list.stream().filter(number -> number > 1 && IntStream.rangeClosed(2,(int)Math.sqrt(number))
+             .allMatch(a-> number % a !=0))
+                     .distinct()
+                             .collect(Collectors.toList());
 
      System.out.println(arrPrime);
 
